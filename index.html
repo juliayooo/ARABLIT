@@ -15,9 +15,14 @@
         div{
             text-align: center;
             width: 100%;
+            left:50%;
+            right:50%
         }
         img{
-            width: 100%;
+            size: 50%;
+            left:50%;
+            right:50%
+            
         }
     </style>
         <body>
@@ -36,6 +41,8 @@
             if(storyCount < 15) {
                 storyCount++;
                 document.getElementById('imageBox').innerHTML = "<img src='img_" + storyCount + ".png'>"; 
+                document.getElementById('number').innerHTML = storyCount;
+
             } else {
                 document.getElementById('imageBox').innerHTML = "The story has ended."; 
             }
