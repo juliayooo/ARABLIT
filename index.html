@@ -45,15 +45,15 @@
         }
 
         function reset() {
-            storyCount = 0;
+            storyCount = 1;
             document.getElementById('imageBox').innerHTML = "<img src='img_" + storyCount + ".png'>";
             document.getElementById('number').innerHTML = storyCount;
         }
 
         function shuffle() {
             let randomNum = Math.floor(Math.random() * 14);
-            document.getElementById('imageBox').innerHTML = "<img src='img_" + randomCount + ".png'>";
-            document.getElementById('number').innerHTML = randomCount;
+            document.getElementById('imageBox').innerHTML = "<img src='img_" + randomNum + ".png'>";
+            document.getElementById('number').innerHTML = randomNum;
         }
 
         // Click event to change images sequentially
