@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -22,32 +22,47 @@
             width: 50%;
             left:50%;
             right:50%
-            
         }
     </style>
-        <body>
-            <h3>This is A Very Old Man with Enormous Wings by Gabriel Garcia Marquez</h3>
-            <div id="number"></div>
-            <div id="imageBox"></div>
- <script>
-    window.onload = function(){   
-    let storyCount = 0;
+</head>
+<body>
+    <h3>This is A Very Old Man with Enormous Wings by Gabriel Garcia Marquez</h3>
+    <div id="number"></div>
+    <div id="imageBox"></div>
 
+    <button onclick="reset()">Reset</button>
+    <button onclick="shuffle()">Shuffle</button>
 
-    document.getElementById('number').innerHTML = 0;
-    document.getElementById('imageBox').innerHTML = "click to begin";
-        // RESET BUTTON
+    <script>
+        let storyCount = 0;
+
+        window.onload = function(){   
+            document.getElementById('number').innerHTML = 0;
+            document.getElementById('imageBox').innerHTML = "click to begin";
+        }
+
+        function reset() {
+            storyCount = 0;
+            document.getElementById('imageBox').innerHTML = "<img src='img_" + storyCount + ".png'>";
+            document.getElementById('number').innerHTML = storyCount;
+        }
+
+        function shuffle() {
+            let randomNum = Math.floor(Math.random() * 14);
+            document.getElementById('imageBox').innerHTML = "<img src='img_" + randomCount + ".png'>";
+            document.getElementById('number').innerHTML = randomCount;
+        }
+
+        // Click event to change images sequentially
         document.getElementById('imageBox').onclick = function(){
-            if(storyCount < 15) {
+            if(storyCount < 14) {
                 storyCount++;
                 document.getElementById('imageBox').innerHTML = "<img src='img_" + storyCount + ".png'>"; 
                 document.getElementById('number').innerHTML = storyCount;
-
             } else {
-                document.getElementById('imageBox').innerHTML = "The story has ended."; 
+                document.getElementById('imageBox').innerHTML = "The End."; 
             }
         }
-}
- </script>
-            
-        </body>
+    </script>
+</body>
+</html>
